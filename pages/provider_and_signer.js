@@ -2,6 +2,7 @@ import { formatEther, parseEther } from "ethers";
 import { useEffect, useRef, useState } from "react";
 import defaultProvider from "../abi/defaultProvider";
 import walletProvider from "../abi/walletProvider";
+import Layout from "../components/Layout";
 import { useAppContext } from "../hooks/useAppContext";
 
 const ProviderAndSigner = () => {
@@ -60,7 +61,7 @@ const ProviderAndSigner = () => {
   };
 
   return (
-    <div>
+    <Layout>
       <h1>Address: {currentAccount}</h1>
       <h1>balance: {etherBalance}</h1>
       <button onClick={handleConnectClick}>connect</button>
@@ -72,7 +73,7 @@ const ProviderAndSigner = () => {
         <input ref={amountRef} name="amount" step=".01" type="number" />
         <button>Send</button>
       </form>
-    </div>
+    </Layout>
   );
 };
 

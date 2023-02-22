@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import primitives from "../abi/primitives";
-import walletProvider from "../abi/walletProvider";
+import getPrimitivesWithSigner from "../abi/primitives/getPrimitivesWithSigner";
+import primitives from "../abi/primitives/primitives";
+import Layout from "../components/Layout";
 
 const Primitives = () => {
   const [isTrue, setTrue] = useState();
@@ -11,12 +12,6 @@ const Primitives = () => {
   //   const smallUintRef = useRef();
   const bigUintRef = useRef();
 
-  const getPrimitivesWithSigner = async () => {
-    const signer = await walletProvider.getSigner();
-    const primitivesWithSigner = primitives.connect(signer);
-    //   const primitivesWithSigner = new Contract(address, abi, signer);
-    return primitivesWithSigner;
-  };
 
   useEffect(() => {
     (async () => {
@@ -81,7 +76,7 @@ const Primitives = () => {
   };
 
   return (
-    <div>
+    <Layout>
       <h1>Primitives</h1>
       <h3>Bool: {isTrue ? "true" : "false"}</h3>
       <button onClick={() => handleSetTrue(true)}>Set true</button>
@@ -112,7 +107,7 @@ const Primitives = () => {
         />
         <button>Set new uint</button>
       </form>
-    </div>
+    </Layout>
   );
 };
 

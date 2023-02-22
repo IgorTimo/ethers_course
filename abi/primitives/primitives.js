@@ -1,5 +1,5 @@
 import { Contract } from "ethers";
-import defaultProvider from "./defaultProvider";
+import defaultProvider from "../defaultProvider";
 
 const humanReadableAbi = [
   // "bool public isTrue",

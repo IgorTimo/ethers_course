@@ -1,15 +1,18 @@
 import Link from "next/link";
+import Layout from "../components/Layout";
 
 const Index = () => {
   return (
-    <ul>
-      <li>
-        <Link href="provider_and_signer">ProviderAndSigner</Link>
-      </li>
-      <li>
-        <Link href="primitives">Primitives</Link>
-      </li>
-    </ul>
+    <Layout>
+      <ul style={{ fontSize: "20px" }}>
+        <li>
+          <Link href="provider_and_signer">Provider And Signer</Link>
+        </li>
+        <li>
+          <Link href="primitives">Primitives</Link>
+        </li>
+      </ul>
+    </Layout>
   );
 };
 
