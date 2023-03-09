@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
-import getReferenceTypesWithSigner from "../abi/referenceTypes/getReferenceTypesWithSigner";
-import referenceTypes from "../abi/referenceTypes/referenceTypes";
+import getReferenceTypesWithSigner from "../abi/reference_types/getReferenceTypesWithSigner";
+import referenceTypes from "../abi/reference_types/referenceTypes";
 import Layout from "../components/Layout";
 
 const ReferenceTypes = () => {
@@ -68,7 +68,8 @@ const ReferenceTypes = () => {
         isAvaliableRef.current.checked
       );
       await tx.wait();
-      router.reload();
+      // router.reload();
+      location.reload();
     } catch (error) {
       console.error(error);
     }

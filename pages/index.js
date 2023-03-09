@@ -14,6 +14,9 @@ const Index = () => {
         <li>
           <Link href="/reference_types">Reference Types</Link>
         </li>
+        <li>
+          <Link href="/strange_factory">Overload, events, errors</Link>
+        </li>
       </ul>
     </Layout>
   );
